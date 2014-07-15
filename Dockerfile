@@ -8,7 +8,7 @@ RUN git clone https://github.com/lh3/bwa && \
 	make && cp bwa /usr/local/bin/bwa
 
 
-ENTRYPOINT ["/usr/local/bin/bwa"]
+CMD ["/usr/local/bin/bwa"]
 
 # Integration tests
 ADD test /tmp/test
