@@ -7,8 +7,9 @@ RUN git clone https://github.com/lh3/bwa && \
 	git checkout 0.7.10 &&  \
 	make && cp bwa /usr/local/bin/bwa
 
+RUN apt-get install -y samtools
 
-CMD ["/usr/local/bin/bwa"]
+CMD ["/usr/local/bin/bwa", "samtools"]
 
 # Integration tests
 ADD test /tmp/test
