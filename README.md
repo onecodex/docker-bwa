@@ -47,6 +47,13 @@ To create a sorted bam file (and index):
         /data/reads.fa --bam \
         --out /data/output.bam
 
+
+**Bonus tip**: With a simple bash function, the above workflow can be further simplified:
+
+    $ function d() { docker run -v `pwd`:/data quay.io/refgenomics/$@; }
+    $ d docker-bwa align /data/genome.fa /data/reads.fa
+
+
 ## Available binaries
 
 ### BWA
