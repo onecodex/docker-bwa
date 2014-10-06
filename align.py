@@ -13,7 +13,7 @@ if __name__ == '__main__':
     
     group = parser.add_mutually_exclusive_group()
     group.add_argument("-b", "--bam", action="store_true", default=False, help="Output a bam file")
-    group.add_argument("-s", "--sam", action="store_true", default=False, help="Output a bam file")
+    group.add_argument("-s", "--sam", action="store_true", default=False, help="Output a sam file")
 
     parser.add_argument("-o", "--out", help="Output file or destination (default is stdout)")
     parser.add_argument("--verbose", action="store_true", default=False, help="Output stderr from commands")
