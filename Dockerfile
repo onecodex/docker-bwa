@@ -9,7 +9,11 @@ RUN git clone https://github.com/lh3/bwa && \
 
 RUN apt-get install -y samtools
 
-CMD ["/usr/local/bin/bwa"]
+# Convenience commands
+ADD align.py /usr/local/bin/align.py
+RUN chmod +x /usr/local/bin/align.py
+RUN ln -s /usr/local/bin/align.py /usr/local/bin/align
+CMD ["/usr/local/bin/align"]
 
 # Integration tests
 ADD test /tmp/test
