@@ -21,3 +21,9 @@
   run diff /tmp/test/test.out.sorted.bam /tmp/test/test.sorted.bam
   [[ "$output" = "" ]]
 }
+
+@test "align.py should index, map and output an alignment" {
+  run align.py /tmp/test/test.fasta /tmp/test/test.fastq --sam --out /tmp/test/align_out.sam
+  run diff <(cat /tmp/test/test.sam | grep -v "^@") <(cat /tmp/test/align_out.sam | grep -v "^@")
+  [[ "$output" = "" ]] 
+}
